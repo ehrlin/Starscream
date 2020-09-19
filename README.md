@@ -1,8 +1,6 @@
-![starscream](https://raw.githubusercontent.com/daltoniam/starscream/assets/starscream.jpg)
+## Starscream 3.1
 
 Starscream is a conforming WebSocket ([RFC 6455](http://tools.ietf.org/html/rfc6455)) client library in Swift.
-
-Its Objective-C counterpart can be found here: [Jetfire](https://github.com/acmacalister/jetfire)
 
 ## Features
 
@@ -274,101 +272,6 @@ Check out the SimpleTest project in the examples directory to see how to setup a
 
 Starscream works with iOS 7/OSX 10.9 or above. It is recommended to use iOS 8/10.10 or above for CocoaPods/framework support. To use Starscream with a project targeting iOS 7, you must include all Swift files directly in your project.
 
-## Installation
-
-### CocoaPods
-
-Check out [Get Started](http://cocoapods.org/) tab on [cocoapods.org](http://cocoapods.org/).
-
-To use Starscream in your project add the following 'Podfile' to your project
-
-	source 'https://github.com/CocoaPods/Specs.git'
-	platform :ios, '9.0'
-	use_frameworks!
-
-	pod 'Starscream', '~> 3.0.2'
-
-Then run:
-
-    pod install
-
-### Carthage
-
-Check out the [Carthage](https://github.com/Carthage/Carthage) docs on how to add a install. The `Starscream` framework is already setup with shared schemes.
-
-[Carthage Install](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application)
-
-You can install Carthage with [Homebrew](http://brew.sh/) using the following command:
-
-```bash
-$ brew update
-$ brew install carthage
-```
-
-To integrate Starscream into your Xcode project using Carthage, specify it in your `Cartfile`:
-
-```
-github "daltoniam/Starscream" >= 3.0.2
-```
-
-### Accio
-
-Check out the [Accio](https://github.com/JamitLabs/Accio) docs on how to add a install. 
-
-Add the following to your Package.swift:
-
-```swift
-.package(url: "https://github.com/daltoniam/Starscream.git", .upToNextMajor(from: "3.1.0")),
-```
-
-Next, add `Starscream` to your App targets dependencies like so:
-
-```swift
-.target(
-    name: "App",
-    dependencies: [
-        "Starscream",
-    ]
-),
-```
-
-Then run `accio update`.
-
-### Rogue
-
-First see the [installation docs](https://github.com/acmacalister/Rogue) for how to install Rogue.
-
-To install Starscream run the command below in the directory you created the rogue file.
-
-```
-rogue add https://github.com/daltoniam/Starscream
-```
-
-Next open the `libs` folder and add the `Starscream.xcodeproj` to your Xcode project. Once that is complete, in your "Build Phases" add the `Starscream.framework` to your "Link Binary with Libraries" phase. Make sure to add the `libs` folder to your `.gitignore` file.
-
-### Swift Package Manager
-
-The [Swift Package Manager](https://swift.org/package-manager/) is a tool for automating the distribution of Swift code and is integrated into the `swift` compiler.
-
-Once you have your Swift package set up, adding Starscream as a dependency is as easy as adding it to the `dependencies` value of your `Package.swift`.
-
-```swift
-dependencies: [
-    .Package(url: "https://github.com/daltoniam/Starscream.git", majorVersion: 3)
-]
-```
-
-### Other
-
-Simply grab the framework (either via git submodule or another package manager).
-
-Add the `Starscream.xcodeproj` to your Xcode project. Once that is complete, in your "Build Phases" add the `Starscream.framework` to your "Link Binary with Libraries" phase.
-
-### Add Copy Frameworks Phase
-
-If you are running this in an OSX app or on a physical iOS device you will need to make sure you add the `Starscream.framework` to be included in your app bundle. To do this, in Xcode, navigate to the target configuration window by clicking on the blue project icon, and selecting the application target under the "Targets" heading in the sidebar. In the tab bar at the top of that window, open the "Build Phases" panel. Expand the "Link Binary with Libraries" group, and add `Starscream.framework`. Click on the + button at the top left of the panel and select "New Copy Files Phase". Rename this new phase to "Copy Frameworks", set the "Destination" to "Frameworks", and add `Starscream.framework` respectively.
-
-
 ## WebSocketAdvancedDelegate
 The advanced delegate acts just like the simpler delegate but provides some additional information on the connection and incoming frames.
 
@@ -408,31 +311,10 @@ func  websocketHttpUpgrade(socket: WebSocketClient, response: CFHTTPMessage) {
 }
 ```
 
-## Swift versions
-
-* Swift 4.2 - 3.0.6
-
 ## KNOWN ISSUES
 - WatchOS does not have the the CFNetwork String constants to modify the stream's SSL behavior. It will be the default Foundation SSL behavior. This means watchOS CANNOT use `SSLCiphers`,  `disableSSLCertValidation`, or SSL pinning. All these values set on watchOS will do nothing. 
 - Linux does not have the security framework, so it CANNOT use SSL pinning or `SSLCiphers` either. 
 
-
-## TODOs
-
-- [ ] Add Unit Tests - Local WebSocket server that runs against Autobahn
-
 ## License
 
 Starscream is licensed under the Apache v2 License.
-
-## Contact
-
-### Dalton Cherry
-* https://github.com/daltoniam
-* http://twitter.com/daltoniam
-* http://daltoniam.com
-
-### Austin Cherry ###
-* https://github.com/acmacalister
-* http://twitter.com/acmacalister
-* http://austincherry.me

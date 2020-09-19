@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 `Starscream` adheres to [Semantic Versioning](http://semver.org/).
 
+### [3.1.2](https://github.com/ehrlin/Starscream/tree/3.1.2)
+
+* SPM update
+* Removed some config files
+
 ### [3.1.1](https://github.com/daltoniam/Starscream/tree/3.1.1)
 
 Small version number fix for 3.1.0: [#703](https://github.com/daltoniam/Starscream/issues/703)
